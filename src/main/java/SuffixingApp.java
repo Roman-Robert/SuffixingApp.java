@@ -20,7 +20,7 @@ public class SuffixingApp {
 
                 String mode = properties.getProperty("mode");
 
-                if (mode.equalsIgnoreCase("copy") || mode.equalsIgnoreCase("move")) {
+                if (!mode.equalsIgnoreCase("copy") || !mode.equalsIgnoreCase("move")) {
                     logger.log(Level.SEVERE, "Mode is not recognized: " + mode);
                 }
 
@@ -80,7 +80,7 @@ public class SuffixingApp {
                 String newPath = addSuffix(path, suffix);
                 try {
                     Files.move(Path.of(path), Path.of(newPath));
-                    logger.log(Level.INFO, path + " -> " + newPath);
+                    logger.log(Level.INFO, path + " => " + newPath);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

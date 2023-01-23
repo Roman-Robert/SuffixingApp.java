@@ -25,7 +25,6 @@
             <systemPath>${project.basedir}/src/main/resources/suffixing.jar</systemPath>
         </dependency>
 
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
